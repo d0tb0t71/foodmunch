@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "394940710238",
+    "project_id": "foodmunch-47be9",
+    "storage_bucket": "foodmunch-47be9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394940710238:android:96b3c0fa5470e2d6d263cf",
+        "android_client_info": {
+          "package_name": "com.example.foodmunch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394940710238-du15rm17fjeelugtivnu4vjbmc6e6epd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFTVJuyHzGHZSvWBRIm5jfwB9Js241Yt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394940710238-du15rm17fjeelugtivnu4vjbmc6e6epd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

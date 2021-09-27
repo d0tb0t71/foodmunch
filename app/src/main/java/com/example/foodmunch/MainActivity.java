@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        login_now.setOnClickListener(v ->{
+        register_now.setOnClickListener(v ->{
 
             startActivity(new Intent(getApplicationContext(),RegisterNow.class));
 

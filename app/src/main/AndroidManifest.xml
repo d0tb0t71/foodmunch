@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Foodmunch">
         <activity
+            android:name=".HomePage"
+            android:exported="true" />
+        <activity
             android:name=".LoginNow"
             android:exported="true"
             android:label="@string/title_activity_login_now"

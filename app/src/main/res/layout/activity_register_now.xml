@@ -5,5 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterNow">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        tools:context=".RegisterActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            >
+
+
+            <EditText
+                android:id="@+id/name_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Shop Name or Username"
+                android:inputType="text"
+                />
+            <EditText
+                android:id="@+id/email_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                />
+            <EditText
+                android:id="@+id/mobile_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                />
+            <EditText
+                android:id="@+id/address_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                android:inputType="text"
+                />
+            <EditText
+                android:id="@+id/password_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                />
+            <EditText
+                android:id="@+id/confirm_password_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                />
+
+
+            <Button
+                android:layout_marginTop="15dp"
+                android:id="@+id/register_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register Now"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Already Registered?" />
+
+            <Button
+                android:id="@+id/go_login_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Login Now" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
