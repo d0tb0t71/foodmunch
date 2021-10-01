@@ -10,13 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Foodmunch">
         <activity
-            android:name=".HomePage"
+            android:name=".ItemDetails"
+            android:exported="true" />
+        <activity
+            android:name=".AddItem"
+            android:exported="true" />
+        <activity
+            android:name=".MyProfile"
+            android:exported="true" />
+        <activity
+            android:name=".MyShop"
+            android:exported="true" />
+        <activity
+            android:name=".MyCart"
             android:exported="true" />
         <activity
             android:name=".LoginNow"
-            android:exported="true"
-            android:label="@string/title_activity_login_now"
-            android:theme="@style/Theme.Foodmunch.NoActionBar" />
+            android:exported="true" />
+        <activity
+            android:name=".HomePage"
+            android:exported="true" />
         <activity
             android:name=".UserOrSeller"
             android:exported="true" />

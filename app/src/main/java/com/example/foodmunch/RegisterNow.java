@@ -26,13 +26,15 @@ public class RegisterNow extends AppCompatActivity {
     Button register_now,go_login_now;
     EditText name_ET,email_ET,mobile_ET,address_ET,password_ET,confirm_password_ET;
     FirebaseAuth mAuth;
+    String userStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_now);
 
-        String userStatus= getIntent().getStringExtra("userStatus");
+        userStatus= getIntent().getStringExtra("userStatus");
+        System.out.println(userStatus+"========================");
 
 
         register_now=findViewById(R.id.register_now);

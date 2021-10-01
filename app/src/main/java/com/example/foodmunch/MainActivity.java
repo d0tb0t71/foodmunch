@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
     Button login_now,register_now;
@@ -27,9 +30,22 @@ public class MainActivity extends AppCompatActivity {
 
         register_now.setOnClickListener(v ->{
 
-            startActivity(new Intent(getApplicationContext(),RegisterNow.class));
+            startActivity(new Intent(getApplicationContext(),UserOrSeller.class));
 
         });
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user!=null){
+            startActivity(new Intent(getApplicationContext(),HomePage.class));
+
+        }
+
+    }
+
 }
