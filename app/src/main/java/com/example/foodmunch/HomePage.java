@@ -145,4 +145,12 @@ public class HomePage extends AppCompatActivity {
                 return true;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        finishAffinity();
+
+    }
 }

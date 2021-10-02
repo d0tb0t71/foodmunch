@@ -12,6 +12,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -43,6 +50,31 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.MyViewHolder> 
         holder.item_name.setText(modelItem.getItemName());
         holder.item_description.setText(modelItem.getItemDescription());
         holder.item_price.setText("৳ "+modelItem.getItemPrice());
+
+        if(!modelItem.getItemImage().equals("")) {
+            Picasso.get().load(modelItem.getItemImage()).into(holder.item_image);
+        }
+
+
+        DatabaseReference databaseReference0 = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference0.addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    UserModel userModel = dataSnapshot.getValue(UserModel.class);
+                    if(userModel.getUid().equals(modelItem.getShopUid())){
+                        holder.shop_name.setText(userModel.getName());
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
 
 
@@ -76,6 +108,8 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.MyViewHolder> 
         intent.putExtra("itemPrice", itemPrice);
         intent.putExtra("itemImage", itemImage);
         intent.putExtra("shopUid", shopUid);
+        intent.putExtra("itemImage", itemImage);
+
         context.startActivity(intent);
     }
 

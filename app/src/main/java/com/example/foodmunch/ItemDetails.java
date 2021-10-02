@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class ItemDetails extends AppCompatActivity {
 
@@ -50,6 +51,10 @@ public class ItemDetails extends AppCompatActivity {
         item_details_name.setText(itemName);
         item_details_description.setText(itemDescription);
         item_details_price.setText("৳ "+itemPrice);
+
+        if(!itemImage.equals("")&& itemImage!= null){
+            Picasso.get().load(itemImage).into(item_details_image);
+        }
 
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");

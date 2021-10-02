@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/drawable/item_border.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/activity_add_item.xml" value="0.22" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/activity_home_page.xml" value="0.22" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/activity_item_details.xml" value="0.2" />
@@ -13,7 +14,7 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/activity_my_shop.xml" value="0.2" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/activity_register_now.xml" value="0.2" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/activity_user_or_seller.xml" value="0.34479166666666666" />
-        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/my_shop_product_single_view.xml" value="0.25" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/my_shop_product_single_view.xml" value="0.2" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/layout/shop_list_single_view.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/Foodmunch/app/src/main/res/menu/home_menu.xml" value="0.25" />
       </map>
