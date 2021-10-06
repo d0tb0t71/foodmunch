@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/cart_product_list"
+    android:background="@color/themeColor"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/cart_item_name"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="I T E M   N A M E"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cart_item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/dish" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/cart_item_image"
+
+        >
+
+        <ImageView
+            android:id="@+id/cart_item_minus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:src="@drawable/minus" />
+
+        <TextView
+            android:id="@+id/cart_item_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text=" *** "
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+        <ImageView
+            android:id="@+id/cart_item_plus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:src="@drawable/plus" />
+        <TextView
+            android:id="@+id/cart_item_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total:৳ ***"
+            android:textColor="@color/white"
+            android:textAlignment="textEnd"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

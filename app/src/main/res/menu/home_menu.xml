@@ -7,11 +7,6 @@
         android:icon="@drawable/ic_baseline_search_24"
         app:showAsAction="always"
         />
-    <item android:id="@+id/my_cart"
-        android:title="My Cart"
-        android:icon="@drawable/ic_baseline_shopping_cart_24"
-        app:showAsAction="always"
-        />
  <item android:id="@+id/my_shop"
         android:title="My Shop"
         android:icon="@drawable/ic_baseline_search_24"

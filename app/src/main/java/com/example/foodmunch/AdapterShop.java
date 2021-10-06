@@ -1,6 +1,7 @@
 package com.example.foodmunch;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,32 @@ public class AdapterShop extends RecyclerView.Adapter<AdapterShop.MyViewHolder> 
 
         Picasso.get().load(userModel.getImageUrl()).into(holder.shop_image_IV);
 
+        holder.shop_name_TV.setOnClickListener(v->{
+            startItemDetails(userModel.getName(),userModel.getAddress(),userModel.getMobile(),userModel.getImageUrl(), userModel.getUid());
+        });
+        holder.shop_address_TV.setOnClickListener(v->{
+            startItemDetails(userModel.getName(),userModel.getAddress(),userModel.getMobile(),userModel.getImageUrl(), userModel.getUid());
+        });
+        holder.shop_mobile_TV.setOnClickListener(v->{
+            startItemDetails(userModel.getName(),userModel.getAddress(),userModel.getMobile(),userModel.getImageUrl(), userModel.getUid());
+        });
+        holder.shop_image_IV.setOnClickListener(v->{
+            startItemDetails(userModel.getName(),userModel.getAddress(),userModel.getMobile(),userModel.getImageUrl(), userModel.getUid());
+        });
 
+
+    }
+
+    private void startItemDetails(String shopName, String shopAddress, String shopMobile, String shopImage,String shopUid) {
+
+        Intent intent = new Intent(context.getApplicationContext(), ShopItemList.class);
+        intent.putExtra("shopName", shopName);
+        intent.putExtra("shopAddress", shopAddress);
+        intent.putExtra("shopMobile", shopMobile);
+        intent.putExtra("shopImage", shopImage);
+        intent.putExtra("shopUid", shopUid);
+
+        context.startActivity(intent);
     }
 
     @Override

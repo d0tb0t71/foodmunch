@@ -1,5 +1,6 @@
 package com.example.foodmunch;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -72,7 +73,6 @@ public class HomePage extends AppCompatActivity {
                     System.out.println(userModel.getUserStatus()+"-------------------------");
 
 
-
                     if(userModel.getUserStatus().equals("admin")){
                         list.add(userModel);
                     }
@@ -93,15 +93,9 @@ public class HomePage extends AppCompatActivity {
 
 
 
+       /* String hn = getClass().getSimpleName();
 
-
-
-
-
-
-
-
-
+        Toast.makeText(getApplicationContext(), hn, Toast.LENGTH_SHORT).show();*/
 
 
 
@@ -125,9 +119,6 @@ public class HomePage extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.search_shop:
                 Toast.makeText(getApplicationContext(), "Search Clicked", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.my_cart:
-                startActivity( new Intent(getApplicationContext(),MyCart.class));
                 return true;
             case R.id.my_shop:
                 startActivity( new Intent(getApplicationContext(),MyShop.class));

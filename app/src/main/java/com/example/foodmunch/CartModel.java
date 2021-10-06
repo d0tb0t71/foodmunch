@@ -1,18 +1,19 @@
 package com.example.foodmunch;
 
-public class ModelItem {
+public class CartModel {
 
-    String itemName="",itemDescription="",itemPrice="",itemImage="",shopUid="";
+    String itemName,itemDescription,itemImage,itemPrice,shopUid,itemQuantity;
 
-    public ModelItem() {
+    public CartModel() {
     }
 
-    public ModelItem(String itemName, String itemDescription, String itemPrice, String itemImage, String shopUid) {
+    public CartModel(String itemName, String itemDescription, String itemImage, String itemPrice, String shopUid, String itemQuantity) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
-        this.itemPrice = itemPrice;
         this.itemImage = itemImage;
+        this.itemPrice = itemPrice;
         this.shopUid = shopUid;
+        this.itemQuantity = itemQuantity;
     }
 
     public String getItemName() {
@@ -31,14 +32,6 @@ public class ModelItem {
         this.itemDescription = itemDescription;
     }
 
-    public String getItemPrice() {
-        return itemPrice;
-    }
-
-    public void setItemPrice(String itemPrice) {
-        this.itemPrice = itemPrice;
-    }
-
     public String getItemImage() {
         return itemImage;
     }
@@ -47,11 +40,27 @@ public class ModelItem {
         this.itemImage = itemImage;
     }
 
+    public String getItemPrice() {
+        return itemPrice;
+    }
+
+    public void setItemPrice(String itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+
     public String getShopUid() {
         return shopUid;
     }
 
     public void setShopUid(String shopUid) {
         this.shopUid = shopUid;
+    }
+
+    public String getItemQuantity() {
+        return itemQuantity;
+    }
+
+    public void setItemQuantity(String itemQuantity) {
+        this.itemQuantity = itemQuantity;
     }
 }

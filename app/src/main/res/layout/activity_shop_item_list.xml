@@ -4,22 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyCart">
+    tools:context=".ShopItemList">
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cart_recycler_view"
+        android:id="@+id/shop_item_list_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/place_order_btn"
-        />
-    <Button
-        android:id="@+id/place_order_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="🛒 Place Order"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        />
+         />
 
 
 </RelativeLayout>

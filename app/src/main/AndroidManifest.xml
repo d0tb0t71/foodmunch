@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Foodmunch">
         <activity
+            android:name=".Orders"
+            android:exported="true" />
+        <activity
+            android:name=".ShopItemList"
+            android:exported="true" />
+        <activity
             android:name=".ItemDetails"
             android:exported="true" />
         <activity

@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -83,6 +85,16 @@ public class ItemDetails extends AppCompatActivity {
 
         item_details_add_to_my_cart_button.setOnClickListener(v->{
 
+            FirebaseDatabase database=FirebaseDatabase.getInstance();
+            DatabaseReference databaseReference=database.getReference("My Cart");
+
+            String my_uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            CartModel cartModel = new CartModel(itemName,itemDescription,itemImage,itemPrice,shopUid,"1");
+
+            databaseReference.child(my_uid).push().setValue(cartModel);
+
+            Toast.makeText(getApplicationContext(), "Added to cart ", Toast.LENGTH_SHORT).show();
 
 
 

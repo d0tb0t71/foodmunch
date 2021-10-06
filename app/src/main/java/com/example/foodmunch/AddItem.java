@@ -73,7 +73,6 @@ public class AddItem extends AppCompatActivity {
 
             ModelItem modelItem=new ModelItem(ItemName,ItemDescription,ItemPrice,ItemImage,ShopUid);
 
-
             reference.child(my_uid).push().setValue(modelItem);
 
             startActivity(new Intent(getApplicationContext(),MyShop.class));
