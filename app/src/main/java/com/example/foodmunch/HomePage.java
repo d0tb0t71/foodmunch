@@ -126,6 +126,9 @@ public class HomePage extends AppCompatActivity {
             case R.id.my_profile:
                 startActivity( new Intent(getApplicationContext(),MyProfile.class));
                 return true;
+                case R.id.my_orders:
+                startActivity( new Intent(getApplicationContext(),Orders.class));
+                return true;
             case R.id.logout:
                 Toast.makeText(getApplicationContext(), "Log out", Toast.LENGTH_SHORT).show();
                 FirebaseAuth.getInstance().signOut();

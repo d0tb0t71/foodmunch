@@ -31,6 +31,7 @@ public class ShopItemList extends AppCompatActivity {
     AdapterItem adapterItem;
     ArrayList<ModelItem> list;
     String SN = "";
+    String shopName,shopAddress,shopMobile,shopImage,shopUid;
 
 
     @Override
@@ -41,12 +42,11 @@ public class ShopItemList extends AppCompatActivity {
 
         shop_item_list_recyclerview = findViewById(R.id.shop_item_list_recyclerview);
 
-
-        String shopName = getIntent().getStringExtra("shopName");
-        String shopAddress = getIntent().getStringExtra("shopAddress");
-        String shopMobile = getIntent().getStringExtra("shopMobile");
-        String shopImage = getIntent().getStringExtra("shopImage");
-        String shopUid = getIntent().getStringExtra("shopUid");
+        shopName = getIntent().getStringExtra("shopName");
+        shopAddress = getIntent().getStringExtra("shopAddress");
+        shopMobile = getIntent().getStringExtra("shopMobile");
+        shopImage = getIntent().getStringExtra("shopImage");
+        shopUid = getIntent().getStringExtra("shopUid");
 
         SN = shopName;
 
@@ -68,7 +68,7 @@ public class ShopItemList extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String my_uid = user.getUid();
 
-        DatabaseReference databaseReference0 = FirebaseDatabase.getInstance().getReference("Item List").child(my_uid);
+        DatabaseReference databaseReference0 = FirebaseDatabase.getInstance().getReference("Item List").child(shopUid);
 
         databaseReference0.addValueEventListener(new ValueEventListener() {
             @Override
@@ -114,10 +114,25 @@ public class ShopItemList extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.my_cart:
-                startActivity( new Intent(getApplicationContext(),MyCart.class));
+                Intent intent = new Intent(getApplicationContext(), MyCart.class);
+                intent.putExtra("shopName", shopName);
+                intent.putExtra("shopAddress", shopAddress);
+                intent.putExtra("shopMobile", shopMobile);
+                intent.putExtra("shopImage", shopImage);
+                intent.putExtra("shopUid", shopUid);
+                startActivity(intent);
                 return true;
             case R.id.search_item:
                 Toast.makeText(getApplicationContext(), "Search Clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.shop_info:
+                Intent intent1 = new Intent(getApplicationContext(), ShopInfo.class);
+                intent1.putExtra("shopName", shopName);
+                intent1.putExtra("shopAddress", shopAddress);
+                intent1.putExtra("shopMobile", shopMobile);
+                intent1.putExtra("shopImage", shopImage);
+                intent1.putExtra("shopUid", shopUid);
+                startActivity(intent1);
                 return true;
 
             default:

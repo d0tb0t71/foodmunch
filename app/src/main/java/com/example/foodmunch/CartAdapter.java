@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Array;
@@ -67,6 +70,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
             holder.cart_item_quantity.setText(cartModel.getItemQuantity());
             holder.cart_item_price.setText("৳ "+cartModel.getItemPrice());
 
+
+
+
         });
 
         holder.cart_item_minus.setOnClickListener(v->{
@@ -85,6 +91,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
             holder.cart_item_quantity.setText(cartModel.getItemQuantity());
             holder.cart_item_price.setText("৳ "+cartModel.getItemPrice());
+
+
 
 
         });

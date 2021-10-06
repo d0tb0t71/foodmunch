@@ -1,5 +1,6 @@
 package com.example.foodmunch;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -17,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MyCart extends AppCompatActivity {
 
@@ -24,6 +26,8 @@ public class MyCart extends AppCompatActivity {
     CartAdapter cartAdapter;
     ArrayList<CartModel> list;
     Button place_order_btn;
+
+    String BuyerName,BuyerAddress,BuyerMobile;
 
 
     @Override
@@ -35,6 +39,7 @@ public class MyCart extends AppCompatActivity {
 
 
         cart_recycler_view=findViewById(R.id.cart_recycler_view);
+        place_order_btn= findViewById(R.id.place_order_btn);
 
         cart_recycler_view.setHasFixedSize(true);
 
@@ -48,6 +53,12 @@ public class MyCart extends AppCompatActivity {
         list = new ArrayList<>();
         cartAdapter = new CartAdapter(this, list);
         cart_recycler_view.setAdapter(cartAdapter);
+
+        String shopName = getIntent().getStringExtra("shopName");
+        String shopAddress = getIntent().getStringExtra("shopAddress");
+        String shopMobile = getIntent().getStringExtra("shopMobile");
+        String shopImage = getIntent().getStringExtra("shopImage");
+        String shopUid = getIntent().getStringExtra("shopUid");
 
 
 
@@ -63,6 +74,8 @@ public class MyCart extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                list.clear();
+
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
 
                     CartModel cartModel = dataSnapshot.getValue(CartModel.class);
@@ -70,9 +83,11 @@ public class MyCart extends AppCompatActivity {
                         list.add(cartModel);
 
 
+
                 }
 
                 cartAdapter.notifyDataSetChanged();
+
 
 
             }
@@ -81,6 +96,49 @@ public class MyCart extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
+
+
+        });
+
+
+
+
+
+
+
+
+        place_order_btn.setOnClickListener(v->{
+
+
+            FirebaseDatabase database=FirebaseDatabase.getInstance();
+            DatabaseReference reference=database.getReference("Shop Orders");
+
+            String buyer_details = my_uid ;
+            String order_details = "";
+
+            for(int i=0;i<list.size();i++){
+
+                order_details = "\nItem : "+list.get(i).getItemName()+"\nQuantity : "+list.get(i).itemQuantity+"\nPrice : "+list. get(i).getItemPrice()+"\n----------------------";
+                buyer_details = buyer_details + order_details;
+
+
+             }
+
+
+            System.out.println(buyer_details);
+
+
+            HashMap<Object,String> map = new HashMap<>();
+
+            map.put("orderDetails",buyer_details);
+
+            reference.child(shopUid).push().setValue(map);
+
+            startActivity(new Intent(getApplicationContext(),HomePage.class));
+            finish();
+
+
         });
 
 
