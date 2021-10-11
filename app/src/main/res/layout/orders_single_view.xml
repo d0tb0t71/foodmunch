@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/orders_single_view"
+    android:background="@color/themeColor"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/buyer_name_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buyer Name"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/buyer_mobile_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buyer_name_TV"
+        android:text="0123456789"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/buyer_address_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buyer_mobile_TV"
+        android:text="B u y e r   A d d r e s s"
+        android:textColor="@color/white" />
+
+
+
+</RelativeLayout>

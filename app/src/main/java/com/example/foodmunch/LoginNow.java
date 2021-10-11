@@ -55,6 +55,7 @@ public class LoginNow extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             startActivity(new Intent(getApplicationContext(),HomePage.class));
+                            Toast.makeText(getApplicationContext(), "Login Now", Toast.LENGTH_SHORT).show();
 
                         }
                         else{
@@ -64,7 +65,7 @@ public class LoginNow extends AppCompatActivity {
                 });
 
 
-                Toast.makeText(getApplicationContext(), "Login Now", Toast.LENGTH_SHORT).show();
+
 
             }
         });

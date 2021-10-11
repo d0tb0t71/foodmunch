@@ -3,6 +3,7 @@ package com.example.foodmunch;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -114,28 +115,40 @@ public class MyCart extends AppCompatActivity {
             FirebaseDatabase database=FirebaseDatabase.getInstance();
             DatabaseReference reference=database.getReference("Shop Orders");
 
-            String buyer_details = my_uid ;
+            String buyerUid = user.getUid();
             String order_details = "";
+            StringBuilder orderDetails= new StringBuilder();
+            int total_price=0;
 
             for(int i=0;i<list.size();i++){
 
-                order_details = "\nItem : "+list.get(i).getItemName()+"\nQuantity : "+list.get(i).itemQuantity+"\nPrice : "+list. get(i).getItemPrice()+"\n----------------------";
-                buyer_details = buyer_details + order_details;
+                order_details = "\nItem : "+list.get(i).getItemName()+"\nQuantity : "+list.get(i).itemQuantity+"\nPrice : "+list. get(i).getItemPrice()+"৳"+"\n-------------------------------";
+                orderDetails.append(order_details);
+                String s_price = list.get(i).getItemPrice();
+
+                total_price += Integer.parseInt(s_price);
 
 
              }
 
+            String totalPrice = String.valueOf(total_price);
 
-            System.out.println(buyer_details);
+
+
 
 
             HashMap<Object,String> map = new HashMap<>();
 
-            map.put("orderDetails",buyer_details);
+            map.put("buyerUid",buyerUid);
+            map.put("orderDetails",orderDetails.toString());
+            map.put("orderStatus","Processing");
+            map.put("totalPrice",totalPrice);
+            map.put("buyerUid",my_uid);
 
             reference.child(shopUid).push().setValue(map);
 
             startActivity(new Intent(getApplicationContext(),HomePage.class));
+            Toast.makeText(getApplicationContext(), "Order Placed...", Toast.LENGTH_SHORT).show();
             finish();
 
 
